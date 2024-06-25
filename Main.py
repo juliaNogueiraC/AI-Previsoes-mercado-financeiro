@@ -80,3 +80,15 @@ plt.title('Previsões do SVR vs Valores Reais')
 plt.xlabel('Amostras')
 plt.ylabel('Preço de Fechamento')
 plt.show()
+
+X_future = data[['Close']].tail(30)
+
+lr_future_predictions = lr_model.predict(X_future)
+
+print("Previsões para os próximos 30 dias (Regressão Linear):")
+print(lr_future_predictions)
+
+svr_future_predictions = svr_model.predict(X_future)
+
+print("Previsões para os próximos 30 dias (SVR):")
+print(svr_future_predictions)
