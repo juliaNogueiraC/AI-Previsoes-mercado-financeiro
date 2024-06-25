@@ -62,3 +62,12 @@ svr_predictions = svr_model.predict(X_test)
 # Avaliar o modelo de SVR
 svr_mse = mean_squared_error(y_test, svr_predictions)
 print(f'Erro Quadrático Médio do SVR: {svr_mse}')
+
+plt.figure(figsize=(10, 6))
+plt.plot(y_test.values, label='Valores Reais')
+plt.plot(lr_predictions, label='Previsões da Regressão Linear')
+plt.legend()
+plt.title('Previsões da Regressão Linear vs Valores Reais')
+plt.xlabel('Amostras')
+plt.ylabel('Preço de Fechamento')
+plt.show()
