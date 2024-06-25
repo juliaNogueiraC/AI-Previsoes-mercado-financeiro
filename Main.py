@@ -63,6 +63,7 @@ svr_predictions = svr_model.predict(X_test)
 svr_mse = mean_squared_error(y_test, svr_predictions)
 print(f'Erro Quadrático Médio do SVR: {svr_mse}')
 
+# Visualizar as previsões do modelo de Regressão Linear
 plt.figure(figsize=(10, 6))
 plt.plot(y_test.values, label='Valores Reais')
 plt.plot(lr_predictions, label='Previsões da Regressão Linear')
@@ -72,6 +73,7 @@ plt.xlabel('Amostras')
 plt.ylabel('Preço de Fechamento')
 plt.show()
 
+# Visualizar as previsões do modelo de SVR
 plt.figure(figsize=(10, 6))
 plt.plot(y_test.values, label='Valores Reais')
 plt.plot(svr_predictions, label='Previsões do SVR')
@@ -81,14 +83,19 @@ plt.xlabel('Amostras')
 plt.ylabel('Preço de Fechamento')
 plt.show()
 
+# Pegar os últimos 30 dias do dataset original para prever os próximos 30 dias
 X_future = data[['Close']].tail(30)
 
+# Fazer previsões para os próximos 30 dias com o modelo de Regressão Linear
 lr_future_predictions = lr_model.predict(X_future)
 
+# Exibir as previsões futuras do modelo de Regressão Linear
 print("Previsões para os próximos 30 dias (Regressão Linear):")
 print(lr_future_predictions)
 
+# Fazer previsões para os próximos 30 dias com o modelo de SVR
 svr_future_predictions = svr_model.predict(X_future)
 
+# Exibir as previsões futuras do modelo de SVR
 print("Previsões para os próximos 30 dias (SVR):")
 print(svr_future_predictions)
