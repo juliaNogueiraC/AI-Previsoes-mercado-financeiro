@@ -27,3 +27,38 @@ plt.title('Preço de Fechamento ao Longo do Tempo')
 plt.xlabel('Data')
 plt.ylabel('Preço de Fechamento')
 plt.show()
+
+# Criar uma coluna de previsão com o preço de fechamento deslocado (por exemplo, 30 dias à frente)
+data['Prediction'] = data['Close'].shift(-30)
+
+# Excluir as últimas 30 linhas, onde os valores de 'Prediction' são NaN
+data = data[:-30]
+
+# Definir as features (X) e o target (y)
+X = data[['Close']]
+y = data['Prediction']
+
+# Dividir os dados em conjuntos de treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Treinar o modelo de Regressão Linear
+lr_model = LinearRegression()
+lr_model.fit(X_train, y_train)
+
+# Fazer previsões no conjunto de teste
+lr_predictions = lr_model.predict(X_test)
+
+# Avaliar o modelo de Regressão Linear
+lr_mse = mean_squared_error(y_test, lr_predictions)
+print(f'Erro Quadrático Médio da Regressão Linear: {lr_mse}')
+
+# Treinar o modelo de SVR
+svr_model = SVR(kernel='rbf')
+svr_model.fit(X_train, y_train)
+
+# Fazer previsões no conjunto de teste
+svr_predictions = svr_model.predict(X_test)
+
+# Avaliar o modelo de SVR
+svr_mse = mean_squared_error(y_test, svr_predictions)
+print(f'Erro Quadrático Médio do SVR: {svr_mse}')
