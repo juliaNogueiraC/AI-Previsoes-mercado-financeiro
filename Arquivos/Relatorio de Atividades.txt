@@ -1,0 +1,24 @@
+Relatório de Atividades
+Tiago:
+Responsável por
+- Iniciar o projeto Escolhendo os modelos
+- Preparar o ambiente
+- Instalar as dependências
+- Fazer o carregamento e preparar os dados
+- Iniciar o IEEE
+- Fazer os Slides
+- Organizar o Readme.md
+Luis:
+Responsável por
+- Criar as colunas de previsão
+- Dividir os dados
+- Treinar os modelos
+- Escrever o IEEE
+- Revisar o Readme.md
+Guilherme:
+Responsável por 
+- Visualizar as previsões dos modelos
+- Veparar os últimos 30 dias do dataset original
+- Fazer a previsão dos próximos 30 dias com os modelos
+- Revisar o IEEE
+- Auxiliar no Readme.md
