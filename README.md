@@ -1,5 +1,7 @@
 # Análise e Previsão de Tendências em Dados de Mercado Financeiro
 
+<img src="./imgs/img1.png" alt="Mercado Previsões" width = 250px>
+
 ## Sobre
 O dataset AAPL.csv é um conjunto de dados históricos de preços de ações da empresa Apple Inc. (símbolo de ticker AAPL) extraído do Yahoo Finance. Este conjunto de dados inclui informações diárias de preços de fechamento das ações da Apple em um intervalo de tempo específico. Vamos dar uma olhada nos detalhes:
 
